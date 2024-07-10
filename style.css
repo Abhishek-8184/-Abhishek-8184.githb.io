@@ -1,0 +1,335 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(45deg, #000000, #0f1c79, rgb(36, 61, 203), #a10c6b, #0461d3, #040a65);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    color: #fff;
+    /* margin-top: 9px; Adjust to avoid overlapping with fixed header */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: inline-block;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Transparent white background on hover */
+    border-radius: 5px;
+}
+
+/* Sections */
+.section {
+    padding: 100px ; /* Adjust as needed */
+    text-align: left;
+}
+
+.section .container {
+    text-align: center;
+}
+
+
+/* Home section */
+#home {
+    color: #fff;
+}
+
+
+.home-text {
+    max-width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+.home-image {
+    max-width: 1000%;
+    padding: 20px;
+}
+
+.home-image img {
+    position: relative;
+    padding: 0.3%;
+    width: 300px;
+    height: 300px;
+    background:gray;
+    border-radius: 200px; /* Rounded profile image */
+    box-shadow: 0px 8px 16px 8px rgb(45, 21, 61); /* Optional: Add shadow to image */
+    transition: transform 0.7s ease;
+}
+
+.home-image img:hover {
+    transform: scale(1.1); /* Enlarge image on hover */
+}
+
+/* About section */
+#about {
+    color: #fff;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.skill {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+}
+
+.skill p {
+    margin-bottom: 5px;
+}
+
+.percentage-bar {
+    width: 100%;
+    background-color: #f0f0f0;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 5px;
+    width: var(--percent, 0%);
+    transition: width 0.3s ease;
+}
+
+/* Portfolio section */
+#portfolio {
+    color: #fff;
+}
+
+.portfolio {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: calc(33.33% - 20px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Enlarge image on hover */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 16, 16, 0.7); /* Transparent black background */
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Contact section */
+#contact {
+    color: #fff;
+    justify-content:space-around;
+
+    display: inline;
+}
+
+.contact-content {
+    padding-top: 70px;
+    display: flex;
+    justify-content:space-around;
+    align-items: flex-start;
+}
+
+.contact-info {
+    max-width: 40%;
+    padding-top: 100px;
+}
+
+form {
+    max-width: 50%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: flex;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    color: #fff;
+    text-align: center;
+    padding-bottom: 10px 0;
+}
+
+/* Animation for background gradient */
+@keyframes color {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        padding: 0px 0;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    header nav ul {
+        display:inline;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 0px;
+        display: inline;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .home-text {
+        max-width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .home-image{
+        max-width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .skills .skill {
+        width: 100%;
+    }
+
+    form,
+    .contact-info {
+        max-width: 100%;
+    }
+
+}
